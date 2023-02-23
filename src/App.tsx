@@ -1,6 +1,11 @@
-import { useState } from 'react'
+import { createUseStyles } from 'react-jss'
 
 function App() {
+
+  // JSS EMPTY CONST
+  const useStyles = createUseStyles({
+
+  })
   
   return (
     <div>
