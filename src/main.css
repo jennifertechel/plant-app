@@ -1,0 +1,10 @@
+@font-face {
+  font-family: ariata;
+  src: url(./assets/Fonts/ariata-medium.otf);
+}
+
+body {
+  font-family: "ariata";
+  margin: 0;
+  background: #f0e1d4;
+}
