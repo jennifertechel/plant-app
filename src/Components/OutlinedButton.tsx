@@ -1,9 +1,16 @@
 import { createUseStyles } from "react-jss";
+import { NavLink } from "react-router-dom";
 
 function OutlinedButton() {
   const classes = useStyles();
 
-  return <button className={classes.button}>Let's begin</button>;
+  return (
+    <>
+      <button className={classes.button}>
+        <NavLink to="quizpageone">Let'sBegin</NavLink>
+      </button>
+    </>
+  );
 }
 const useStyles = createUseStyles({
   button: {

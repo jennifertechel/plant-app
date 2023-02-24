@@ -1,9 +1,5 @@
-import { createUseStyles } from "react-jss";
+import { Outlet } from "react-router-dom";
 import { usePlantMatch } from "./hooks/usePlantMatch";
-import StartPage from "./pages/StartPage";
-// JSS EMPTY CONST
-
-const useStyles = createUseStyles({});
 
 function App() {
   // API
@@ -11,7 +7,7 @@ function App() {
 
   return (
     <div>
-      <StartPage />
+      <Outlet />
     </div>
   );
 }
