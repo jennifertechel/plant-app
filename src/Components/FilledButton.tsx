@@ -1,9 +1,13 @@
 import { createUseStyles } from "react-jss";
 
-function FilledButton() {
+interface Props {
+  children: React.ReactNode;
+}
+
+function FilledButton(props: Props) {
   const classes = useStyles();
 
-  return <button className={classes.button}>Let's begin</button>;
+  return <button className={classes.button}>{props.children}</button>;
 }
 const useStyles = createUseStyles({
   button: {

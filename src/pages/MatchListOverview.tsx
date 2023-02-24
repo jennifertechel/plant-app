@@ -1,12 +1,12 @@
 import { createUseStyles } from "react-jss";
-import Header from "../Components/Header";
 
 function MatchListOverview() {
   const classes = useStyles();
   return (
     <>
-      <Header />
-      <main className={classes.main}></main>
+      <main className={classes.main}>
+        <h2>This is Match List Overview</h2>
+      </main>
     </>
   );
 }

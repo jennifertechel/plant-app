@@ -1,17 +1,15 @@
 import { createUseStyles } from "react-jss";
-import { NavLink } from "react-router-dom";
 
-function OutlinedButton() {
+interface Props {
+  children: React.ReactNode;
+}
+
+function OutlinedButton(props: Props) {
   const classes = useStyles();
 
-  return (
-    <>
-      <button className={classes.button}>
-        <NavLink to="quizpageone">Let'sBegin</NavLink>
-      </button>
-    </>
-  );
+  return <button className={classes.button}>{props.children}</button>;
 }
+
 const useStyles = createUseStyles({
   button: {
     padding: "0.8rem 1.2rem",

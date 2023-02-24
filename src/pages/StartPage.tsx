@@ -1,17 +1,20 @@
 import { createUseStyles } from "react-jss";
-import Header from "../Components/Header";
+import { NavLink } from "react-router-dom";
 import OutlinedButton from "../Components/OutlinedButton";
 
 function StartPage() {
   const classes = useStyles();
   return (
     <>
-      <Header />
       <main className={classes.main}>
         <p className={classes.p}>
           Do our test to find the right plants for your home
         </p>
-        <OutlinedButton />
+        <OutlinedButton>
+          <NavLink to="quizpageone" className={classes.buttonLink}>
+            Let's Begin
+          </NavLink>
+        </OutlinedButton>
       </main>
     </>
   );
@@ -30,6 +33,10 @@ const useStyles = createUseStyles({
     width: "40%",
     textAlign: "center",
     marginBottom: "3rem",
+  },
+  buttonLink: {
+    textDecoration: "none",
+    color: "black",
   },
 });
 

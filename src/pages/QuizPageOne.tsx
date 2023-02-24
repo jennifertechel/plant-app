@@ -1,13 +1,11 @@
 import { createUseStyles } from "react-jss";
-import Header from "../Components/Header";
 
 function QuizPageOne() {
   const classes = useStyles();
   return (
     <>
-      <Header />
       <main className={classes.main}>
-        <h2>This is quizpageone</h2>
+        <h2>This is Quiz Page One</h2>
       </main>
     </>
   );
