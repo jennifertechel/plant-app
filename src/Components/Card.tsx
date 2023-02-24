@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 function Card() {
   const classes = useStyles();
 
-  return <button></button>;
+  return <div></div>;
 }
 
 const useStyles = createUseStyles({});
