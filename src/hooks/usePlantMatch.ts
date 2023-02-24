@@ -8,7 +8,7 @@ interface Plant {
 
 export const usePlantMatch = () => {
   const [plants, setPlants] = useState<Plant[]>([]);
-  console.log(plants);
+  //console.log(plants);
 
   useEffect(() => {
     const options = {
