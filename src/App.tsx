@@ -1,8 +1,6 @@
-import { createUseStyles } from "react-jss";
+import { Outlet } from "react-router-dom";
+import Header from "./Components/Header";
 import { usePlantMatch } from "./hooks/usePlantMatch";
-// JSS EMPTY CONST
-
-const useStyles = createUseStyles({});
 
 function App() {
   // API
@@ -10,7 +8,8 @@ function App() {
 
   return (
     <div>
-      <h1>PlantMatch</h1>
+      <Header />
+      <Outlet />
     </div>
   );
 }
