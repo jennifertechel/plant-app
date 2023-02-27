@@ -1,3 +1,4 @@
+import "material-icons/iconfont/material-icons.css";
 import { createUseStyles } from "react-jss";
 
 function Card() {
@@ -8,11 +9,43 @@ function Card() {
       <main className={classes.main}>
         <div className={classes.image}></div>
         <div className={classes.info}>
-          <h3 className={classes.h3}>Namn</h3>
-          <p>Info</p>
-          <p>Info</p>
-          <p>Info</p>
-          <p>Info</p>
+          <h3 className={classes.h3}>Plant Name</h3>
+          <p className={classes.p}>
+            <i
+              style={{ paddingRight: "0.5rem" }}
+              className="material-icons-outlined"
+            >
+              water_drop
+            </i>{" "}
+            Water info
+          </p>
+          <p className={classes.p}>
+            <i
+              style={{ paddingRight: "0.5rem" }}
+              className="material-icons-outlined"
+            >
+              light_mode
+            </i>{" "}
+            Light info
+          </p>
+          <p className={classes.p}>
+            <i
+              style={{ paddingRight: "0.5rem" }}
+              className="material-icons-outlined"
+            >
+              straighten
+            </i>
+            Size info
+          </p>
+          <p className={classes.p}>
+            <i
+              style={{ paddingRight: "0.5rem" }}
+              className="material-icons-outlined"
+            >
+              info
+            </i>{" "}
+            Info
+          </p>
         </div>
       </main>
     </>
@@ -38,12 +71,16 @@ const useStyles = createUseStyles({
   info: {
     display: "flex",
     flexDirection: "column",
-    //justifyContent: "center",
-    //alignItems: "center",
+    //justifyContent: "flex-start",
+    alignItems: "flex-start",
     paddingLeft: "1rem",
   },
   h3: {
     paddingTop: "0rem",
+  },
+  p: {
+    display: "flex",
+    justifyContent: "center",
   },
 });
 
