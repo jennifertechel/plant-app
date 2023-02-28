@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from "./App";
+import { QuizProvider } from "./Components/QuizContext";
 import "./main.css";
 import MatchListOverview from "./pages/MatchListOverview";
 import PlantInfo from "./pages/PlantInfo";
@@ -27,6 +28,8 @@ const router = createBrowserRouter(
 );
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QuizProvider>
+      <RouterProvider router={router} />
+    </QuizProvider>
   </React.StrictMode>
 );

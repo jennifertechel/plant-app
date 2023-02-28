@@ -2,6 +2,8 @@ import { createUseStyles } from "react-jss";
 
 interface Props {
   text: String;
+  value: boolean;
+  onChecked: (value: boolean) => void;
 }
 
 function Input(props: Props) {
@@ -10,7 +12,12 @@ function Input(props: Props) {
   return (
     <>
       <label className={classes.label}>
-        <input type="checkbox" id="option-1" />
+        <input
+          type="checkbox"
+          id={props.text.toString()}
+          checked={props.value}
+          onChange={(e) => props.onChecked(e.target.checked)}
+        />
         {props.text}
       </label>
     </>

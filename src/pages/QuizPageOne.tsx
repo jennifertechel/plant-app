@@ -2,9 +2,12 @@ import { createUseStyles } from "react-jss";
 import { NavLink } from "react-router-dom";
 import FilledButton from "../Components/FilledButton";
 import Input from "../Components/Input";
+import { useQuiz } from "../Components/QuizContext";
 
 function QuizPageOne() {
   const classes = useStyles();
+  const { direction, setDirection } = useQuiz();
+
   return (
     <>
       <main className={classes.main}>
@@ -13,22 +16,35 @@ function QuizPageOne() {
         </h2>
         <p>Choose one or multiple options</p>
         <form className={classes.form}>
-          <Input text="South" />
-          <Input text="North" />
-          <Input text="West" />
-          <Input text="East" />
+          <Input
+            text="South"
+            value={direction.south}
+            onChecked={(south) => setDirection({ ...direction, south })}
+          />
+          <Input
+            text="North"
+            value={direction.north}
+            onChecked={(north) => setDirection({ ...direction, north })}
+          />
+          <Input
+            text="East"
+            value={direction.east}
+            onChecked={(east) => setDirection({ ...direction, east })}
+          />
+          <Input
+            text="West"
+            value={direction.west}
+            onChecked={(west) => setDirection({ ...direction, west })}
+          />
         </form>
         <div className={classes.buttonDiv}>
-          <FilledButton>
-            <NavLink to="/" className={classes.buttonLink}>
-              Exit
-            </NavLink>
-          </FilledButton>
-          <FilledButton>
-            <NavLink to="/quizpagetwo" className={classes.buttonLink}>
-              Next
-            </NavLink>
-          </FilledButton>
+          <NavLink to="/" className={classes.buttonLink}>
+            <FilledButton text="Exit" />
+          </NavLink>
+
+          <NavLink to="/quizpagetwo" className={classes.buttonLink}>
+            <FilledButton text="Next" />
+          </NavLink>
         </div>
       </main>
     </>

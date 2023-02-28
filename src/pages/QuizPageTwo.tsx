@@ -2,9 +2,12 @@ import { createUseStyles } from "react-jss";
 import { NavLink } from "react-router-dom";
 import FilledButton from "../Components/FilledButton";
 import Input from "../Components/Input";
+import { useQuiz } from "../Components/QuizContext";
 
 function QuizPageTwo() {
   const classes = useStyles();
+  const { watering, setWatering } = useQuiz();
+
   return (
     <>
       <main className={classes.main}>
@@ -13,21 +16,30 @@ function QuizPageTwo() {
         </h2>
         <p>Choose one option</p>
         <form className={classes.form}>
-          <Input text="Minimum work please" />
-          <Input text="I don't mind spending some time on it" />
-          <Input text="Lots and lots" />
+          <Input
+            text="Minimum work please"
+            value={watering.easy}
+            onChecked={(easy) => setWatering({ ...watering, easy })}
+          />
+          <Input
+            text="I don't mind spending some time on it"
+            value={watering.medium}
+            onChecked={(medium) => setWatering({ ...watering, medium })}
+          />
+          <Input
+            text="I've got nothing but time"
+            value={watering.hard}
+            onChecked={(hard) => setWatering({ ...watering, hard })}
+          />
         </form>
         <div className={classes.buttonDiv}>
-          <FilledButton>
-            <NavLink to="/quizpageone" className={classes.buttonLink}>
-              Previous
-            </NavLink>
-          </FilledButton>
-          <FilledButton>
-            <NavLink to="/matchlistoverview" className={classes.buttonLink}>
-              Next
-            </NavLink>
-          </FilledButton>
+          <NavLink to="/quizpageone" className={classes.buttonLink}>
+            <FilledButton text="Exit" />
+          </NavLink>
+
+          <NavLink to="/matchlistoverview" className={classes.buttonLink}>
+            <FilledButton text="Next" />
+          </NavLink>
         </div>
       </main>
     </>
