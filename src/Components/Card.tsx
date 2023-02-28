@@ -3,16 +3,20 @@ import { createUseStyles } from "react-jss";
 function Card() {
   const classes = useStyles();
   return (
-    <>
+    <div className={classes.container}>
       <div className={classes.card}>
         <img src="" alt="" className={classes.card_img} />
       </div>
       <p className={classes.card_name}>name of plant</p>
-    </>
+    </div>
   );
 }
 
 const useStyles = createUseStyles({
+  container: {
+    display: "flex",
+    flexDirection: "column",
+  },
   card: {
     width: "18rem",
     height: "13rem",

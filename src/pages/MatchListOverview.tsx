@@ -35,8 +35,25 @@ const useStyles = createUseStyles({
   },
   grid_box: {
     display: "flex",
+    justifyContent: "center",
+    "@media (max-width: 955px)": {
+      flexWrap: "wrap",
+      flexDirection: "row",
+    },
+    "@media (max-width: 655px)": {
+      display: "flex",
+      flexWrap: "wrap",
+    },
   },
-  row: {},
+  row: {
+    "@media (max-width: 955px)": {
+      display: "flex",
+    },
+    "@media (max-width: 655px)": {
+      display: "flex",
+      flexDirection: "column",
+    },
+  },
 });
 
 export default MatchListOverview;
