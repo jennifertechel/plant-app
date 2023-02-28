@@ -5,7 +5,11 @@ function Card() {
   return (
     <div className={classes.container}>
       <div className={classes.card}>
-        <img src="" alt="" className={classes.card_img} />
+        <img
+          src="/src/assets/images/10.svg"
+          alt="Picture here"
+          className={classes.card_img}
+        />
       </div>
       <p className={classes.card_name}>name of plant</p>
     </div>

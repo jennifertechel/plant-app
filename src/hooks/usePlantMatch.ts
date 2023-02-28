@@ -10,6 +10,7 @@ interface Plant {
 export const usePlantMatch = () => {
   const [plants, setPlants] = useState<Plant[]>([]);
   const { direction } = useQuiz();
+  console.log(plants);
 
   useEffect(() => {
     const options = {
@@ -29,5 +30,4 @@ export const usePlantMatch = () => {
   // filtrera plants baserat på direction & watering
 
   return plants.slice(0, 5);
-
 };

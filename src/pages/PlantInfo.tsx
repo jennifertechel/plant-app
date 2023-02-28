@@ -1,4 +1,5 @@
 import { createUseStyles } from "react-jss";
+import { NavLink } from "react-router-dom";
 import FilledButton from "../Components/FilledButton";
 import InfoCard from "../Components/InfoCard";
 
@@ -9,7 +10,9 @@ function PlantInfo() {
       <main className={classes.main}>
         <InfoCard />
         <div className={classes.buttonDiv}>
-          <FilledButton>Back</FilledButton>
+          <NavLink to="/matchlistoverview">
+            <FilledButton text="Next" />
+          </NavLink>
         </div>
       </main>
     </>
