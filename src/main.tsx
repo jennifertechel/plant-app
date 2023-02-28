@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import App from "./App";
 import "./main.css";
+import PlantInfo from "./pages/PlantInfo";
 import QuizPageOne from "./pages/QuizPageOne";
 import StartPage from "./pages/StartPage";
 
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route index element={<StartPage />} />
       <Route path="quizpageone" element={<QuizPageOne />} />
+      <Route path="plantinfo" element={<PlantInfo />} />
     </Route>
   )
 );
