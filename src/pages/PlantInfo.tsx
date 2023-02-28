@@ -1,11 +1,16 @@
 import { createUseStyles } from "react-jss";
+import FilledButton from "../Components/FilledButton";
+import InfoCard from "../Components/InfoCard";
 
 function PlantInfo() {
   const classes = useStyles();
   return (
     <>
       <main className={classes.main}>
-        <h2>This is Plant Info</h2>
+        <InfoCard />
+        <div className={classes.buttonDiv}>
+          <FilledButton>Back</FilledButton>
+        </div>
       </main>
     </>
   );
@@ -17,6 +22,13 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: "2rem",
+  },
+  buttonDiv: {
+    display: "flex",
+    justifyContent: "center",
+    width: "70%",
+    marginTop: "2rem",
   },
 });
 
