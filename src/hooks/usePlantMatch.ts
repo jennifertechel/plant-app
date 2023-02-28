@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useQuiz } from "../Components/QuizContext";
 
 interface Plant {
-  Id: string;
-  Family: string;
-  Img: String;
+  id: string;
+  ideallight: string;
+  watering: string;
 }
 
 export const usePlantMatch = () => {
@@ -15,12 +15,12 @@ export const usePlantMatch = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "e8618a5b23mshf080c264a7ca9cdp1b2165jsn1f8716eb8c9e",
-        "X-RapidAPI-Host": "house-plants2.p.rapidapi.com",
+        "X-RapidAPI-Key": "5a97125199mshd7c16733b94e615p1ceb28jsna45f029facd6",
+        "X-RapidAPI-Host": "house-plants.p.rapidapi.com",
       },
     };
 
-    fetch("https://house-plants2.p.rapidapi.com/all-lite", options)
+    fetch("https://house-plants.p.rapidapi.com/all", options)
       .then((response) => response.json())
       .then((response) => setPlants(response))
       .catch((err) => console.error(err));
