@@ -10,11 +10,9 @@ function StartPage() {
         <p className={classes.p}>
           Do our test to find the right plants for your home
         </p>
-        <OutlinedButton>
-          <NavLink to="quizpageone" className={classes.buttonLink}>
-            Let's Begin
-          </NavLink>
-        </OutlinedButton>
+        <NavLink to="quizpageone" className={classes.buttonLink}>
+          <OutlinedButton text="Let's begin" />
+        </NavLink>
       </main>
     </>
   );
