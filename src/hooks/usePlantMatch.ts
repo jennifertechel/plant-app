@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useQuiz } from "../Components/QuizContext";
 
 interface Plant {
-  id: string;
+  family: string;
   ideallight: string;
   watering: string;
 }
@@ -28,6 +28,5 @@ export const usePlantMatch = () => {
   }, []);
 
   // filtrera plants baserat på direction & watering
-
   return plants.slice(0, 5);
 };

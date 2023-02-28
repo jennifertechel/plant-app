@@ -1,7 +1,10 @@
 import { createUseStyles } from "react-jss";
+import { usePlantMatch } from "../hooks/usePlantMatch";
 
 function Card() {
   const classes = useStyles();
+  const plants = usePlantMatch();
+
   return (
     <div className={classes.container}>
       <div className={classes.card}>
@@ -11,7 +14,7 @@ function Card() {
           className={classes.card_img}
         />
       </div>
-      <p className={classes.card_name}>name of plant</p>
+      <p className={classes.card_name}>{plants[1]?.family}</p>
     </div>
   );
 }
