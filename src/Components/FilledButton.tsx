@@ -17,6 +17,8 @@ const useStyles = createUseStyles({
     fontSize: "1rem",
     background: "#BCC7B5",
     fontFamily: "Montserrat",
+    width: "140px",
+    margin: "0 2rem",
     "&:hover": {
       background: "#7D8975",
     },
