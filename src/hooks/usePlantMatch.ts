@@ -29,4 +29,5 @@ export const usePlantMatch = () => {
   // filtrera plants baserat på direction & watering
 
   return plants.slice(0, 5);
+
 };
