@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import { NavLink } from "react-router-dom";
+import ErrorBoundary from "../Components/ErrorBoundary";
 import FilledButton from "../Components/FilledButton";
 import Input from "../Components/Input";
 import { useQuiz } from "../Components/QuizContext";
@@ -15,28 +16,30 @@ function QuizPageOne() {
           In which direction will your plants be placed?
         </h2>
         <p>Choose one or multiple options</p>
-        <form className={classes.form}>
-          <Input
-            text="South"
-            value={direction.south}
-            onChecked={(south) => setDirection({ ...direction, south })}
-          />
-          <Input
-            text="North"
-            value={direction.north}
-            onChecked={(north) => setDirection({ ...direction, north })}
-          />
-          <Input
-            text="East"
-            value={direction.east}
-            onChecked={(east) => setDirection({ ...direction, east })}
-          />
-          <Input
-            text="West"
-            value={direction.west}
-            onChecked={(west) => setDirection({ ...direction, west })}
-          />
-        </form>
+        <ErrorBoundary>
+          <form className={classes.form}>
+            <Input
+              text="South"
+              value={direction.south}
+              onChecked={(south) => setDirection({ ...direction, south })}
+            />
+            <Input
+              text="North"
+              value={direction.north}
+              onChecked={(north) => setDirection({ ...direction, north })}
+            />
+            <Input
+              text="East"
+              value={direction.east}
+              onChecked={(east) => setDirection({ ...direction, east })}
+            />
+            <Input
+              text="West"
+              value={direction.west}
+              onChecked={(west) => setDirection({ ...direction, west })}
+            />
+          </form>
+        </ErrorBoundary>
         <div className={classes.buttonDiv}>
           <NavLink to="/" className={classes.buttonLink}>
             <FilledButton text="Exit" />

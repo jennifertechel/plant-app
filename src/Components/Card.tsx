@@ -2,6 +2,7 @@ import { createUseStyles } from "react-jss";
 
 function Card() {
   const classes = useStyles();
+
   return (
     <div className={classes.container}>
       <div className={classes.card}>

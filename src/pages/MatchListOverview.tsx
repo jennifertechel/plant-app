@@ -1,26 +1,30 @@
 import { createUseStyles } from "react-jss";
 import Card from "../Components/Card";
+import ErrorBoundary from "../Components/ErrorBoundary";
 
 function MatchListOverview() {
   const classes = useStyles();
+
   return (
     <>
       <main className={classes.main}>
         <h2>Your match:</h2>
-        <div className={classes.grid_box}>
-          <div className={classes.row}>
-            <Card />
-            <Card />
+        <ErrorBoundary>
+          <div className={classes.grid_box}>
+            <div className={classes.row}>
+              <Card />
+              <Card />
+            </div>
+            <div className={classes.row}>
+              <Card />
+              <Card />
+            </div>
+            <div className={classes.row}>
+              <Card />
+              <Card />
+            </div>
           </div>
-          <div className={classes.row}>
-            <Card />
-            <Card />
-          </div>
-          <div className={classes.row}>
-            <Card />
-            <Card />
-          </div>
-        </div>
+        </ErrorBoundary>
       </main>
     </>
   );
