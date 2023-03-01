@@ -1,6 +1,7 @@
 import { createUseStyles } from "react-jss";
 import { NavLink } from "react-router-dom";
 import FilledButton from "../Components/FilledButton";
+import ErrorBoundary from "../Components/ErrorBoundary";
 import InfoCard from "../Components/InfoCard";
 
 function PlantInfo() {
@@ -8,11 +9,15 @@ function PlantInfo() {
   return (
     <>
       <main className={classes.main}>
-        <InfoCard />
+        <ErrorBoundary>
+          <InfoCard />
+        </ErrorBoundary>
         <div className={classes.buttonDiv}>
+
           <NavLink to="/matchlistoverview">
             <FilledButton text="Next" />
           </NavLink>
+
         </div>
       </main>
     </>

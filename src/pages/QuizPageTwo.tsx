@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import { NavLink } from "react-router-dom";
+import ErrorBoundary from "../Components/ErrorBoundary";
 import FilledButton from "../Components/FilledButton";
 import Input from "../Components/Input";
 import { useQuiz } from "../Components/QuizContext";
@@ -15,23 +16,25 @@ function QuizPageTwo() {
           How much time would you like to spend on your plants?
         </h2>
         <p>Choose one option</p>
-        <form className={classes.form}>
-          <Input
-            text="Minimum work please"
-            value={watering.easy}
-            onChecked={(easy) => setWatering({ ...watering, easy })}
-          />
-          <Input
-            text="I don't mind spending some time on it"
-            value={watering.medium}
-            onChecked={(medium) => setWatering({ ...watering, medium })}
-          />
-          <Input
-            text="I've got nothing but time"
-            value={watering.hard}
-            onChecked={(hard) => setWatering({ ...watering, hard })}
-          />
-        </form>
+        <ErrorBoundary>
+          <form className={classes.form}>
+            <Input
+              text="Minimum work please"
+              value={watering.easy}
+              onChecked={(easy) => setWatering({ ...watering, easy })}
+            />
+            <Input
+              text="I don't mind spending some time on it"
+              value={watering.medium}
+              onChecked={(medium) => setWatering({ ...watering, medium })}
+            />
+            <Input
+              text="I've got nothing but time"
+              value={watering.hard}
+              onChecked={(hard) => setWatering({ ...watering, hard })}
+            />
+          </form>
+        </ErrorBoundary>
         <div className={classes.buttonDiv}>
           <NavLink to="/quizpageone" className={classes.buttonLink}>
             <FilledButton text="Exit" />

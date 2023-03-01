@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import ErrorBoundary from "./Components/ErrorBoundary";
 import Header from "./Components/Header";
 import { usePlantMatch } from "./hooks/usePlantMatch";
 
@@ -8,8 +9,10 @@ function App() {
 
   return (
     <div>
-      <Header />
-      <Outlet />
+      <ErrorBoundary>
+        <Header />
+        <Outlet />
+      </ErrorBoundary>
     </div>
   );
 }
