@@ -12,18 +12,7 @@ function MatchListOverview() {
         <h2>Your match:</h2>
         <ErrorBoundary>
           <div className={classes.grid_box}>
-            <div className={classes.row}>
-              <Card />
-              <Card />
-            </div>
-            <div className={classes.row}>
-              <Card />
-              <Card />
-            </div>
-            <div className={classes.row}>
-              <Card />
-              <Card />
-            </div>
+            <Card />
           </div>
         </ErrorBoundary>
       </main>
