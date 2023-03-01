@@ -1,13 +1,21 @@
 import { createUseStyles } from "react-jss";
 
-function Card() {
+interface CardProps {
+  plant: {
+    Img: string;
+    Family: string;
+  };
+}
+
+function Card(props: CardProps) {
   const classes = useStyles();
+  const { Img, Family } = props.plant;
   return (
     <div className={classes.container}>
       <div className={classes.card}>
-        <img src="" alt="" className={classes.card_img} />
+        <img src={Img} alt={Family} className={classes.cardImg} />
       </div>
-      <p className={classes.card_name}>name of plant</p>
+      <p className={classes.card_name}>{Family}</p>
     </div>
   );
 }
@@ -26,7 +34,7 @@ const useStyles = createUseStyles({
     marginBottom: "0",
     backgroundColor: "#F0E1D4",
   },
-  card_img: {
+  cardImg: {
     display: "flex",
     justifyContent: "center",
   },
