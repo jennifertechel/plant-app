@@ -26,7 +26,32 @@ export const usePlantMatch = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  // filtrera plants baserat på direction & watering
+  // Filter plants based på direction and watering
+  const filteredPlants = plants.filter((plant) => {
+    const directionFilter =
+      (direction.north && plant.toleratedlight.includes("/")) ||
+      (direction.south && plant.toleratedlight.includes("Direct sunlight")) ||
+      (direction.east && plant.toleratedlight.includes("Diffused")) ||
+      (direction.west && plant.toleratedlight.includes("Direct sunlight"));
 
-  return plants;
+    const wateringFilter =
+      (watering.easy &&
+        plant.watering.includes(
+          "Water only when the soil is dry. Must be dry between watering"
+        )) ||
+      (watering.medium &&
+        plant.watering.includes(
+          "Water when soil is half dry. Can be dry between watering."
+        )) ||
+      (watering.hard &&
+        plant.watering.includes(
+          "Keep moist between watering. Water when soil is half dry."
+        ));
+
+    return directionFilter && wateringFilter;
+  });
+
+  console.log(filteredPlants);
+
+  return filteredPlants;
 };
