@@ -2,6 +2,7 @@ import { createUseStyles } from "react-jss";
 
 function Header() {
   const classes = useStyles();
+
   return (
     <>
       <header className={classes.header}>

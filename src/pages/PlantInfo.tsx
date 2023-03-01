@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import FilledButton from "../Components/FilledButton";
+import ErrorBoundary from "../Components/ErrorBoundary";
 import InfoCard from "../Components/InfoCard";
 
 function PlantInfo() {
@@ -7,9 +7,11 @@ function PlantInfo() {
   return (
     <>
       <main className={classes.main}>
-        <InfoCard />
+        <ErrorBoundary>
+          <InfoCard />
+        </ErrorBoundary>
         <div className={classes.buttonDiv}>
-          <FilledButton>Back</FilledButton>
+          {/* <FilledButton>Back</FilledButton> */}
         </div>
       </main>
     </>
