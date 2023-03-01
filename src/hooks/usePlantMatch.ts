@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useQuiz } from "../Components/QuizContext";
 
 interface Plant {
-  family: string;
+  common: string[];
+  id: string;
   toleratedlight: string;
   watering: string;
 }
