@@ -7,7 +7,13 @@ function infoCard() {
   return (
     <>
       <main className={classes.main}>
-        <div className={classes.image}> </div>
+        <div className={classes.image}>
+          <img
+            src="/src/assets/images/plant.svg"
+            alt="Picture of plant"
+            style={{ width: "100%" }}
+          />
+        </div>
 
         <div className={classes.info}>
           <h3 className={classes.h3}>Plant Name</h3>
