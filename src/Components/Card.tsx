@@ -7,14 +7,18 @@ function Card() {
 
   return (
     <div className={classes.container}>
-      <div className={classes.card}>
-        <img
-          src="/src/assets/images/10.svg"
-          alt="Picture here"
-          className={classes.card_img}
-        />
-      </div>
-      <p className={classes.card_name}>{plants[1]?.family}</p>
+      {plants.map((plant) => (
+        <div key={plant.id} className={classes.card}>
+          <img
+            src="/src/assets/images/10.svg"
+            alt="Picture here"
+            className={classes.card_img}
+          />
+          <p className={classes.card_name}>
+            {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }
