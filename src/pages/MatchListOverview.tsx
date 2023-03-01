@@ -1,24 +1,19 @@
 import { createUseStyles } from "react-jss";
 import Card from "../Components/Card";
+import { usePlantMatch } from "../hooks/usePlantMatch";
 
 function MatchListOverview() {
   const classes = useStyles();
+  const plants = usePlantMatch().slice(0, 6);
   return (
     <>
       <main className={classes.main}>
         <h2>Your match:</h2>
         <div className={classes.grid_box}>
           <div className={classes.row}>
-            <Card />
-            <Card />
-          </div>
-          <div className={classes.row}>
-            <Card />
-            <Card />
-          </div>
-          <div className={classes.row}>
-            <Card />
-            <Card />
+            {plants.map((plant) => (
+              <Card key={plant.id} plant={plant} />
+            ))}
           </div>
         </div>
       </main>

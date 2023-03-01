@@ -5,6 +5,8 @@ interface Plant {
   id: string;
   ideallight: string;
   watering: string;
+  img: string;
+  family: string;
 }
 
 export const usePlantMatch = () => {
@@ -29,5 +31,4 @@ export const usePlantMatch = () => {
   // filtrera plants baserat på direction & watering
 
   return plants.slice(0, 5);
-
 };
