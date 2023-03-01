@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import Card from "../Components/Card";
+import ErrorBoundary from "../Components/ErrorBoundary";
 import { usePlantMatch } from "../hooks/usePlantMatch";
 
 function MatchListOverview() {
@@ -9,13 +10,22 @@ function MatchListOverview() {
     <>
       <main className={classes.main}>
         <h2>Your match:</h2>
-        <div className={classes.grid_box}>
-          <div className={classes.row}>
-            {plants.map((plant) => (
-              <Card key={plant.id} plant={plant} />
-            ))}
+        <ErrorBoundary>
+          <div className={classes.grid_box}>
+            <div className={classes.row}>
+              <Card />
+              <Card />
+            </div>
+            <div className={classes.row}>
+              <Card />
+              <Card />
+            </div>
+            <div className={classes.row}>
+              <Card />
+              <Card />
+            </div>
           </div>
-        </div>
+        </ErrorBoundary>
       </main>
     </>
   );

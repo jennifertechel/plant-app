@@ -7,44 +7,30 @@ function infoCard() {
   return (
     <>
       <main className={classes.main}>
-        <div className={classes.image}> </div>
+        <div className={classes.image}>
+          <img
+            src="/src/assets/images/plant.svg"
+            alt="Picture of plant"
+            style={{ width: "100%" }}
+          />
+        </div>
 
         <div className={classes.info}>
           <h3 className={classes.h3}>Plant Name</h3>
           <p className={classes.p}>
-            <i
-              style={{ paddingRight: "0.5rem" }}
-              className="material-icons-outlined"
-            >
-              water_drop
-            </i>
+            <i className="material-icons-outlined">water_drop</i>
             Water info
           </p>
           <p className={classes.p}>
-            <i
-              style={{ paddingRight: "0.5rem" }}
-              className="material-icons-outlined"
-            >
-              light_mode
-            </i>
+            <i className="material-icons-outlined">light_mode</i>
             Light info
           </p>
           <p className={classes.p}>
-            <i
-              style={{ paddingRight: "0.5rem" }}
-              className="material-icons-outlined"
-            >
-              straighten
-            </i>
+            <i className="material-icons-outlined">straighten</i>
             Size info
           </p>
           <p className={classes.p}>
-            <i
-              style={{ paddingRight: "0.5rem" }}
-              className="material-icons-outlined"
-            >
-              info
-            </i>
+            <i className="material-icons-outlined">info</i>
             Info
           </p>
         </div>
@@ -81,6 +67,9 @@ const useStyles = createUseStyles({
   p: {
     display: "flex",
     justifyContent: "center",
+  },
+  padding: {
+    paddingRight: "0.5rem",
   },
 });
 

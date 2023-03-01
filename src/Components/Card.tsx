@@ -1,21 +1,20 @@
 import { createUseStyles } from "react-jss";
+import { usePlantMatch } from "../hooks/usePlantMatch";
 
-interface CardProps {
-  plant: {
-    Img: string;
-    Family: string;
-  };
-}
-
-function Card(props: CardProps) {
+function Card() {
   const classes = useStyles();
-  const { Img, Family } = props.plant;
+  const plants = usePlantMatch();
+
   return (
     <div className={classes.container}>
       <div className={classes.card}>
-        <img src={Img} alt={Family} className={classes.cardImg} />
+        <img
+          src="/src/assets/images/10.svg"
+          alt="Picture here"
+          className={classes.cardImg}
+        />
       </div>
-      <p className={classes.card_name}>{Family}</p>
+      <p className={classes.card_name}>{plants[1]?.family}</p>
     </div>
   );
 }
