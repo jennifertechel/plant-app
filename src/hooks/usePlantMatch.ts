@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { useQuiz } from "../Components/QuizContext";
 
 interface Plant {
-  id: string;
-  ideallight: string;
+  family: string;
+  toleratedlight: string;
   watering: string;
 }
 
 export const usePlantMatch = () => {
   const [plants, setPlants] = useState<Plant[]>([]);
-  const { direction } = useQuiz();
+  const { direction, watering } = useQuiz();
 
   useEffect(() => {
     const options = {
@@ -28,6 +28,5 @@ export const usePlantMatch = () => {
 
   // filtrera plants baserat på direction & watering
 
-  return plants.slice(0, 5);
-
+  return plants;
 };
