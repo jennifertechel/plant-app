@@ -1,10 +1,13 @@
 import { createUseStyles } from "react-jss";
-import { NavLink } from "react-router-dom";
-import { usePlantMatch } from "../hooks/usePlantMatch";
+import { Link } from "react-router-dom";
+import { Plant } from "../hooks/usePlantMatch";
 
-function Card() {
+interface Props {
+  plant: Plant;
+}
+
+function Card({ plant }: Props) {
   const classes = useStyles();
-  const plants = usePlantMatch();
   const images = [
     "/src/assets/images/10.svg",
     "/src/assets/images/12.svg",
@@ -12,35 +15,20 @@ function Card() {
   ];
 
   return (
-    <div className={classes.container}>
-      {plants.map(
-        (plant, index) =>
-          plant && ( // Add a conditional check for plant here
-            <NavLink to="/plantinfo" key={plant.id}>
-              <div className={classes.card}>
-                <img
-                  src={images[index % images.length]}
-                  alt="Picture here"
-                  className={classes.cardImg}
-                />
-                <p className={classes.cardName}>
-                  {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-                </p>
-              </div>
-            </NavLink>
-          )
-      )}
-    </div>
+    <Link to={"/plantinfo/" + plant.id} key={plant.id} className={classes.card}>
+      <img
+        src="/src/assets/images/10.svg"
+        alt="Picture here"
+        className={classes.cardImg}
+      />
+      <p className={classes.cardName}>
+        {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
+      </p>
+    </Link>
   );
 }
 
 const useStyles = createUseStyles({
-  container: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    flexWrap: "wrap",
-  },
   card: {
     width: "18rem",
     height: "13rem",
