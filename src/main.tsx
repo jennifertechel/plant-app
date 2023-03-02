@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from "./App";
-import { QuizProvider } from "./Components/QuizContext";
+import { QuizProvider } from "./context/QuizContext";
 import "./main.css";
 import MatchListOverview from "./pages/MatchListOverview";
 import PlantInfo from "./pages/PlantInfo";
