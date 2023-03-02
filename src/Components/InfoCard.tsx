@@ -30,12 +30,8 @@ function InfoCard({ plant }: { plant: Plant }) {
 
       <div className={classes.info}>
         <h3 className={classes.h3}>{plant.latin}</h3>
-        <h5>
-          Common name:{" "}
-          {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-           </h5>
+        <h5>{plant.common.length > 1 ? plant.common[1] : plant.common[0]}</h5>
 
-        
         <div className={classes.right}>
           <div className={classes.p}>
             <i className="material-icons-outlined">water_drop</i>
@@ -54,14 +50,10 @@ function InfoCard({ plant }: { plant: Plant }) {
             <p className={classes.margin}>{plant.climate}</p>
           </div>
         </div>
-        <div className={classes.button}>
-          <Link to="/matchlistoverview">
-            <FilledButton text="Back" />
-          </Link>
-        </div>
 
-       
-
+        <Link to="/matchlistoverview">
+          <FilledButton text="Back" />
+        </Link>
       </div>
     </main>
   );
@@ -123,7 +115,7 @@ const useStyles = createUseStyles({
     paddingLeft: "0rem",
   },
   button: {
-    height: "6.5rem",
+    height: "3rem",
     paddingLeft: "0",
     width: "100%",
     display: "flex",
