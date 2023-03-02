@@ -27,6 +27,14 @@ function InfoCard({ plant }: { plant: Plant }) {
           <i className="material-icons-outlined">light_mode</i>
           {plant.toleratedlight}
         </p>
+        <p className={classes.p}>
+          <i className="material-icons-outlined">spa</i>
+          {plant.family}
+        </p>
+        <p className={classes.p}>
+          <i className="material-icons-outlined">public</i>
+          {plant.climate}
+        </p>
       </div>
     </main>
   );
@@ -56,10 +64,12 @@ const useStyles = createUseStyles({
   },
   h3: {
     paddingTop: "0rem",
+    fontWeight: "bold",
   },
   p: {
     display: "flex",
     justifyContent: "center",
+    alingItems: "center",
   },
   padding: {
     paddingRight: "0.5rem",

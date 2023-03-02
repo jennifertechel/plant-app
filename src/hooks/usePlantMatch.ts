@@ -6,6 +6,8 @@ export interface Plant {
   id: string;
   toleratedlight: string;
   watering: string;
+  family: string;
+  climate: string;
 }
 
 export const usePlantMatch = () => {
