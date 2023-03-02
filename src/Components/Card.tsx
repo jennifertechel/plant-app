@@ -1,28 +1,41 @@
+import { useState } from "react";
 import { createUseStyles } from "react-jss";
-import { usePlantMatch } from "../hooks/usePlantMatch";
+import { Plant, usePlantMatch } from "../hooks/usePlantMatch";
+import InfoCard from "./InfoCard";
 
 function Card() {
   const classes = useStyles();
+  const [selectedPlant, setSelectedPlant] = useState<Plant | null>(null);
   const plants = usePlantMatch();
 
+  const handlePlantClick = (plant: Plant) => {
+    setSelectedPlant(plant);
+  };
+
   return (
-    <div className={classes.container}>
-      {plants.map((plant) => (
-        <div key={plant.id} className={classes.card}>
-          <img
-            src="/src/assets/images/10.svg"
-            alt="Picture here"
-            className={classes.card_img}
-          />
-          <p className={classes.card_name}>
-            {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-          </p>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className={classes.container}>
+        {plants.map((plant) => (
+          <div
+            key={plant.id}
+            className={classes.card}
+            onClick={() => handlePlantClick(plant)}
+          >
+            <img
+              src="/src/assets/images/10.svg"
+              alt="Picture here"
+              className={classes.card_img}
+            />
+            <p className={classes.card_name}>
+              {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
+            </p>
+          </div>
+        ))}
+      </div>
+      {selectedPlant && <InfoCard plant={selectedPlant} />}{" "}
+    </>
   );
 }
-
 const useStyles = createUseStyles({
   container: {
     display: "flex",

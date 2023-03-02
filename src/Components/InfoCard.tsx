@@ -1,41 +1,34 @@
 import "material-icons/iconfont/material-icons.css";
 import { createUseStyles } from "react-jss";
+import { Plant } from "../hooks/usePlantMatch";
 
-function infoCard() {
+function InfoCard({ plant }: { plant: Plant }) {
   const classes = useStyles();
 
   return (
-    <>
-      <main className={classes.main}>
-        <div className={classes.image}>
-          <img
-            src="/src/assets/images/plant.svg"
-            alt="Picture of plant"
-            style={{ width: "100%" }}
-          />
-        </div>
+    <main className={classes.main}>
+      <div className={classes.image}>
+        <img
+          src="/src/assets/images/plant.svg"
+          alt="Picture of plant"
+          style={{ width: "100%" }}
+        />
+      </div>
 
-        <div className={classes.info}>
-          <h3 className={classes.h3}>Plant Name</h3>
-          <p className={classes.p}>
-            <i className="material-icons-outlined">water_drop</i>
-            Water info
-          </p>
-          <p className={classes.p}>
-            <i className="material-icons-outlined">light_mode</i>
-            Light info
-          </p>
-          <p className={classes.p}>
-            <i className="material-icons-outlined">straighten</i>
-            Size info
-          </p>
-          <p className={classes.p}>
-            <i className="material-icons-outlined">info</i>
-            Info
-          </p>
-        </div>
-      </main>
-    </>
+      <div className={classes.info}>
+        <h3 className={classes.h3}>
+          {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
+        </h3>
+        <p className={classes.p}>
+          <i className="material-icons-outlined">water_drop</i>
+          {plant.watering}
+        </p>
+        <p className={classes.p}>
+          <i className="material-icons-outlined">light_mode</i>
+          {plant.toleratedlight}
+        </p>
+      </div>
+    </main>
   );
 }
 
@@ -73,4 +66,4 @@ const useStyles = createUseStyles({
   },
 });
 
-export default infoCard;
+export default InfoCard;

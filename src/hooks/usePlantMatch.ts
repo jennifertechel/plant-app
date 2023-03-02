@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useQuiz } from "../Components/QuizContext";
 
-interface Plant {
+export interface Plant {
   common: string[];
   id: string;
   toleratedlight: string;

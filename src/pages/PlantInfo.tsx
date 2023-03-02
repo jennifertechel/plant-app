@@ -1,23 +1,23 @@
 import { createUseStyles } from "react-jss";
 import { NavLink } from "react-router-dom";
-import FilledButton from "../Components/FilledButton";
 import ErrorBoundary from "../Components/ErrorBoundary";
+import FilledButton from "../Components/FilledButton";
 import InfoCard from "../Components/InfoCard";
+import { Plant } from "../hooks/usePlantMatch";
 
-function PlantInfo() {
+function PlantInfo({ plant }: { plant: Plant }) {
   const classes = useStyles();
+
   return (
     <>
       <main className={classes.main}>
         <ErrorBoundary>
-          <InfoCard />
+          <InfoCard plant={plant} />
         </ErrorBoundary>
         <div className={classes.buttonDiv}>
-
           <NavLink to="/matchlistoverview">
-            <FilledButton text="Next" />
+            <FilledButton text="Back" />
           </NavLink>
-
         </div>
       </main>
     </>
