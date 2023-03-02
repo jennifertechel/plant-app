@@ -9,7 +9,7 @@ function Card() {
   return (
     <div className={classes.container}>
       {plants.map((plant) => (
-        <NavLink to="/plantinfo">
+        <NavLink to="/plantinfo" className={classes.linkStyle}>
           <div key={plant.id} className={classes.card}>
             <img
               src="/src/assets/images/10.svg"
@@ -32,6 +32,10 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     justifyContent: "center",
     flexWrap: "wrap",
+  },
+  linkStyle: {
+    textDecoration: "none",
+    color: "Black",
   },
   card: {
     width: "18rem",
