@@ -7,19 +7,23 @@ import FilledButton from "./FilledButton";
 
 function InfoCard({ plant }: { plant: Plant }) {
   const classes = useStyles();
-  const [imageSrc, setImageSrc] = useState("/src/assets/images/plant.svg");
+  const [imageSrc, setImageSrc] = useState(
+    "/src/assets/images/plant-green.svg"
+  );
 
   const handleClick = () => {
-    if (imageSrc === "/src/assets/images/plant.svg") {
-      setImageSrc("/src/assets/images/other-plant-image.svg");
+    if (imageSrc === "/src/assets/images/plant-green.svg") {
+      setImageSrc("/src/assets/images/plant-pink.svg");
     } else {
-      setImageSrc("/src/assets/images/plant.svg");
+      setImageSrc("/src/assets/images/plant-green.svg");
     }
   };
 
   return (
     <main className={classes.main}>
       <div className={classes.image}>
+        <span className={classes.span}>click on the plant!</span>
+
         <img
           src={imageSrc}
           alt="Picture of plant"
@@ -78,6 +82,29 @@ const useStyles = createUseStyles({
     backgroundColor: "#F0E1D4",
     width: "20rem",
     height: "25rem",
+    position: "relative",
+  },
+  span: {
+    position: "absolute",
+    transform: "scale(1.2)",
+    bottom: "20px",
+    left: "10px",
+    animation: "$blink 1s ease-in-out infinite",
+    fontSize: "0.75rem",
+  },
+  "@keyframes blink": {
+    "0%": {
+      opacity: 1,
+      transform: "scale(1)",
+    },
+    "50%": {
+      opacity: 0.8,
+      transform: "scale(1.1)",
+    },
+    "100%": {
+      opacity: 1,
+      transform: "scale(1)",
+    },
   },
   info: {
     display: "flex",

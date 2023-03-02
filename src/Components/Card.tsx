@@ -21,12 +21,11 @@ function Card({ plant }: Props) {
           alt="Picture here"
           className={classes.cardImg}
         />
-        <p className={classes.card_name}>
+        <p className={classes.cardName}>
           {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
         </p>
       </Link>
     </div>
-
   );
 }
 
