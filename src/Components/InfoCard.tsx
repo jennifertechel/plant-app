@@ -1,4 +1,5 @@
 import "material-icons/iconfont/material-icons.css";
+import { useState } from "react";
 import { createUseStyles } from "react-jss";
 import { Link } from "react-router-dom";
 import { Plant } from "../hooks/usePlantMatch";
@@ -6,25 +7,31 @@ import FilledButton from "./FilledButton";
 
 function InfoCard({ plant }: { plant: Plant }) {
   const classes = useStyles();
+  const [imageSrc, setImageSrc] = useState("/src/assets/images/plant.svg");
+
+  const handleClick = () => {
+    if (imageSrc === "/src/assets/images/plant.svg") {
+      setImageSrc("/src/assets/images/other-plant-image.svg");
+    } else {
+      setImageSrc("/src/assets/images/plant.svg");
+    }
+  };
 
   return (
     <main className={classes.main}>
       <div className={classes.image}>
         <img
-          src="/src/assets/images/plant.svg"
+          src={imageSrc}
           alt="Picture of plant"
           style={{ width: "100%" }}
+          onClick={handleClick}
         />
       </div>
 
       <div className={classes.info}>
         <h3 className={classes.h3}>{plant.latin}</h3>
-        <h5>
-          Common name:{" "}
-          {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-           </h5>
+        <h5>{plant.common.length > 1 ? plant.common[1] : plant.common[0]}</h5>
 
-        
         <div className={classes.right}>
           <div className={classes.p}>
             <i className="material-icons-outlined">water_drop</i>
@@ -43,14 +50,10 @@ function InfoCard({ plant }: { plant: Plant }) {
             <p className={classes.margin}>{plant.climate}</p>
           </div>
         </div>
-        <div className={classes.button}>
-          <Link to="/matchlistoverview">
-            <FilledButton text="Back" />
-          </Link>
-        </div>
 
-       
-
+        <Link to="/matchlistoverview">
+          <FilledButton text="Back" />
+        </Link>
       </div>
     </main>
   );
@@ -112,7 +115,7 @@ const useStyles = createUseStyles({
     paddingLeft: "0rem",
   },
   button: {
-    height: "6.5rem",
+    height: "3rem",
     paddingLeft: "0",
     width: "100%",
     display: "flex",
