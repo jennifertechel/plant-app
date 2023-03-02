@@ -23,7 +23,7 @@ function Card() {
                   alt="Picture here"
                   className={classes.cardImg}
                 />
-                <p className={classes.card_name}>
+                <p className={classes.cardName}>
                   {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
                 </p>
               </div>
@@ -55,12 +55,13 @@ const useStyles = createUseStyles({
     paddingTop: "4rem",
     height: "13.5rem",
   },
-  card_name: {
+  cardName: {
     alignItems: "flex-start",
     margin: "0rem",
     paddingLeft: "0.5rem",
     paddingRight: "1rem",
     paddingBottom: "3rem",
+    color: "black",
   },
 });
 
