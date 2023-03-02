@@ -5,16 +5,21 @@ import { usePlantMatch } from "../hooks/usePlantMatch";
 function Card() {
   const classes = useStyles();
   const plants = usePlantMatch();
+  const images = [
+    "/src/assets/images/10.svg",
+    "/src/assets/images/12.svg",
+    "/src/assets/images/11.svg",
+  ];
 
   return (
     <div className={classes.container}>
       {plants.map(
-        (plant) =>
+        (plant, index) =>
           plant && ( // Add a conditional check for plant here
             <NavLink to="/plantinfo" key={plant.id}>
               <div className={classes.card}>
                 <img
-                  src="/src/assets/images/10.svg"
+                  src={images[index % images.length]}
                   alt="Picture here"
                   className={classes.cardImg}
                 />
