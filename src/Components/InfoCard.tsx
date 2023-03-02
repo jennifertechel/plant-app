@@ -7,19 +7,24 @@ import FilledButton from "./FilledButton";
 
 function InfoCard({ plant }: { plant: Plant }) {
   const classes = useStyles();
-  const [imageSrc, setImageSrc] = useState("/src/assets/images/plant.svg");
+  const [imageSrc, setImageSrc] = useState(
+    "/src/assets/images/plant-green.svg"
+  );
 
   const handleClick = () => {
-    if (imageSrc === "/src/assets/images/plant.svg") {
-      setImageSrc("/src/assets/images/other-plant-image.svg");
+    if (imageSrc === "/src/assets/images/plant-green.svg") {
+      setImageSrc("/src/assets/images/plant-pink.svg");
     } else {
-      setImageSrc("/src/assets/images/plant.svg");
+      setImageSrc("/src/assets/images/plant-green.svg");
     }
   };
 
   return (
-    <main className={classes.main}>
+    <main className={classes.card}>
       <div className={classes.image}>
+        <div className={classes.span}>
+          click me <i className="material-icons-outlined">arrow_outward</i>
+        </div>
         <img
           src={imageSrc}
           alt="Picture of plant"
@@ -29,8 +34,11 @@ function InfoCard({ plant }: { plant: Plant }) {
       </div>
 
       <div className={classes.info}>
-        <h3 className={classes.h3}>{plant.latin}</h3>
-        <h5>{plant.common.length > 1 ? plant.common[1] : plant.common[0]}</h5>
+        <h3 className={classes.h3}>{plant.common[0]}</h3>
+        <h5 className={classes.h5}>
+          <span className={classes.bold}>Latin name: </span>
+          {plant.latin}
+        </h5>
 
         <div className={classes.right}>
           <div className={classes.p}>
@@ -51,7 +59,7 @@ function InfoCard({ plant }: { plant: Plant }) {
           </div>
         </div>
 
-        <Link to="/matchlistoverview">
+        <Link to="/matchlistoverview" className={classes.button}>
           <FilledButton text="Back" />
         </Link>
       </div>
@@ -60,10 +68,11 @@ function InfoCard({ plant }: { plant: Plant }) {
 }
 
 const useStyles = createUseStyles({
-  main: {
+  card: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
+    marginTop: "3rem",
     "@media (max-width: 550px)": {
       flexDirection: "column",
       alignItems: "center",
@@ -76,8 +85,31 @@ const useStyles = createUseStyles({
     justifyContent: "flex-start",
     alignItems: "center",
     backgroundColor: "#F0E1D4",
-    width: "20rem",
-    height: "25rem",
+    width: "32%",
+    position: "relative",
+  },
+  bubble: {},
+  span: {
+    position: "absolute",
+    transform: "scale(1.2)",
+    bottom: "20px",
+    left: "10px",
+    animation: "$blink 1s ease-in-out infinite",
+    fontSize: "0.75rem",
+  },
+  "@keyframes blink": {
+    "0%": {
+      opacity: 1,
+      transform: "scale(1)",
+    },
+    "50%": {
+      opacity: 0.8,
+      transform: "scale(1.1)",
+    },
+    "100%": {
+      opacity: 1,
+      transform: "scale(1)",
+    },
   },
   info: {
     display: "flex",
@@ -85,7 +117,7 @@ const useStyles = createUseStyles({
     justifyContent: "flex-start",
     alignItems: "flex-start",
     paddingLeft: "2rem",
-    width: "35%",
+    width: "32%",
     "@media (max-width: 550px)": {
       alignItems: "center",
       width: "50%",
@@ -95,6 +127,15 @@ const useStyles = createUseStyles({
   h3: {
     paddingTop: "0rem",
     fontWeight: "bold",
+  },
+  h5: {
+    margin: "0 0 1rem",
+    fontFamily: "Montserrat",
+    fontWeight: 400,
+    fontSize: "1rem",
+  },
+  bold: {
+    fontWeight: 600,
   },
   p: {
     display: "flex",
@@ -115,12 +156,7 @@ const useStyles = createUseStyles({
     paddingLeft: "0rem",
   },
   button: {
-    height: "3rem",
-    paddingLeft: "0",
-    width: "100%",
-    display: "flex",
-    alignItems: "flex-end",
-    justifyContent: "flex-start",
+    margin: "2rem -1.2rem",
   },
 });
 

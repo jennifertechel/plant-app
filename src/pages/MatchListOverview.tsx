@@ -13,8 +13,8 @@ function MatchListOverview() {
         <h2>Your match:</h2>
         <ErrorBoundary>
           <div className={classes.container}>
-            {plants.map((plant) => (
-              <Card plant={plant} />
+            {plants.map((plant, index) => (
+              <Card plant={plant} index={index} />
             ))}
           </div>
         </ErrorBoundary>

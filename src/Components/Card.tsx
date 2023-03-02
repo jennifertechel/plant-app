@@ -4,10 +4,18 @@ import { Plant } from "../hooks/usePlantMatch";
 
 interface Props {
   plant: Plant;
+  index: number;
 }
 
-function Card({ plant }: Props) {
+function Card({ plant, index }: Props) {
   const classes = useStyles();
+  const imagesURL = [
+    "/src/assets/images/11.svg",
+    "/src/assets/images/12.svg",
+    "/src/assets/images/10.svg",
+  ];
+  const imagesIndex = index % imagesURL.length;
+  const image = imagesURL[imagesIndex];
 
   return (
     <div className={classes.container}>
@@ -16,17 +24,10 @@ function Card({ plant }: Props) {
         key={plant.id}
         className={classes.card}
       >
-        <img
-          src="/src/assets/images/10.svg"
-          alt="Picture here"
-          className={classes.cardImg}
-        />
-        <p className={classes.card_name}>
-          {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-        </p>
+        <img src={image} alt="Picture here" className={classes.cardImg} />
+        <p className={classes.cardName}>{plant.common[0]}</p>
       </Link>
     </div>
-
   );
 }
 

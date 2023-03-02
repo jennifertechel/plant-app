@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import ErrorBoundary from "../Components/ErrorBoundary";
 import FilledButton from "../Components/FilledButton";
 import Input from "../Components/Input";
-import { useQuiz } from "../Components/QuizContext";
+import { useQuiz } from "../context/QuizContext";
 
 function QuizPageTwo() {
   const classes = useStyles();
