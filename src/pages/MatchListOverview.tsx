@@ -8,52 +8,32 @@ function MatchListOverview() {
   const plants = usePlantMatch();
 
   return (
-    <main className={classes.main}>
-      <h2>Your match:</h2>
-      <ErrorBoundary>
-        <div className={classes.grid_box}>
+    <>
+      <main className={classes.main}>
+        <h2>Your match:</h2>
+        <ErrorBoundary>
           <div className={classes.container}>
             {plants.map((plant) => (
               <Card plant={plant} />
             ))}
           </div>
-        </div>
-      </ErrorBoundary>
-    </main>
+        </ErrorBoundary>
+      </main>
+    </>
   );
 }
 
 const useStyles = createUseStyles({
   container: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
+    justifyContent: "center",
+    flexWrap: "wrap",
   },
   main: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
     alignItems: "center",
-  },
-  grid_box: {
-    display: "flex",
-    justifyContent: "center",
-    "@media (max-width: 955px)": {
-      flexWrap: "wrap",
-      flexDirection: "row",
-    },
-    "@media (max-width: 655px)": {
-      display: "flex",
-      flexWrap: "wrap",
-    },
-  },
-  row: {
-    "@media (max-width: 955px)": {
-      display: "flex",
-    },
-    "@media (max-width: 655px)": {
-      display: "flex",
-      flexDirection: "column",
-    },
   },
 });
 

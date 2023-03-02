@@ -14,7 +14,7 @@ function Card({ plant }: Props) {
       <img
         src="/src/assets/images/10.svg"
         alt="Picture here"
-        className={classes.card_img}
+        className={classes.cardImg}
       />
       <p className={classes.card_name}>
         {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
@@ -22,30 +22,28 @@ function Card({ plant }: Props) {
     </Link>
   );
 }
+
 const useStyles = createUseStyles({
-  container: {
-    display: "flex",
-    flexDirection: "column",
-  },
   card: {
     width: "18rem",
     height: "13rem",
     display: "flex",
     justifyContent: "center",
-    margin: "1rem",
-    marginBottom: "0",
+    flexDirection: "column",
+    margin: "1.5rem",
+
     backgroundColor: "#F0E1D4",
   },
-  card_img: {
-    display: "flex",
-    justifyContent: "center",
+  cardImg: {
+    paddingTop: "4rem",
+    height: "13.5rem",
   },
   card_name: {
     alignItems: "flex-start",
-    marginTop: "0rem",
-    paddingLeft: "1rem",
+    margin: "0rem",
+    paddingLeft: "0.5rem",
     paddingRight: "1rem",
-    paddingBottom: "1rem",
+    paddingBottom: "3rem",
   },
 });
 
