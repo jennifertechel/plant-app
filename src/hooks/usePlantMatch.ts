@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useQuiz } from "../Components/QuizContext";
+import { useQuiz } from "../context/QuizContext";
 
 export interface Plant {
   common: string[];
@@ -55,12 +55,19 @@ export const usePlantMatch = () => {
     return directionFilter && wateringFilter;
   });
 
-  // // Check if plant name is a duplicate
-  // const uniquePlants = Array.from(
-  //   new Set(filteredPlants.map((plant) => plant.common[0]))
-  // ).map((common) => filteredPlants.find((plant) => plant.common[0] === common));
+  const uniquePlants = filteredPlants
+    // Filter out plants with no common name
+    .filter((plant) => plant.common.length > 0)
+    // Remove duplicates
+    .reduce((accumulator: Plant[], current: Plant) => {
+      const existing = accumulator.find(
+        (plant) => plant.common[0] === current.common[0]
+      );
+      if (!existing) {
+        return [...accumulator, current];
+      }
+      return accumulator;
+    }, []);
 
-  console.log(filteredPlants);
-
-  return filteredPlants;
+  return uniquePlants;
 };

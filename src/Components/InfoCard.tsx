@@ -22,7 +22,9 @@ function InfoCard({ plant }: { plant: Plant }) {
   return (
     <main className={classes.card}>
       <div className={classes.image}>
-        <span className={classes.span}>click on the plant!</span>
+        <div className={classes.span}>
+          click me <i className="material-icons-outlined">arrow_outward</i>
+        </div>
         <img
           src={imageSrc}
           alt="Picture of plant"
@@ -32,9 +34,7 @@ function InfoCard({ plant }: { plant: Plant }) {
       </div>
 
       <div className={classes.info}>
-        <h3 className={classes.h3}>
-          {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-        </h3>
+        <h3 className={classes.h3}>{plant.common[0]}</h3>
         <h5 className={classes.h5}>
           <span className={classes.bold}>Latin name: </span>
           {plant.latin}
@@ -85,10 +85,10 @@ const useStyles = createUseStyles({
     justifyContent: "flex-start",
     alignItems: "center",
     backgroundColor: "#F0E1D4",
-    width: "20rem",
-    height: "25rem",
+    width: "32%",
     position: "relative",
   },
+  bubble: {},
   span: {
     position: "absolute",
     transform: "scale(1.2)",
@@ -117,7 +117,7 @@ const useStyles = createUseStyles({
     justifyContent: "flex-start",
     alignItems: "flex-start",
     paddingLeft: "2rem",
-    width: "35%",
+    width: "32%",
     "@media (max-width: 550px)": {
       alignItems: "center",
       width: "50%",
