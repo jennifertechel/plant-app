@@ -52,7 +52,12 @@ export const usePlantMatch = () => {
     return directionFilter && wateringFilter;
   });
 
+  // Check if plant name is a duplicate
+  const uniquePlants = Array.from(
+    new Set(filteredPlants.map((plant) => plant.common[0]))
+  ).map((common) => filteredPlants.find((plant) => plant.common[0] === common));
+
   console.log(filteredPlants);
 
-  return filteredPlants;
+  return uniquePlants;
 };

@@ -8,20 +8,23 @@ function Card() {
 
   return (
     <div className={classes.container}>
-      {plants.map((plant) => (
-        <NavLink to="/plantinfo">
-          <div key={plant.id} className={classes.card}>
-            <img
-              src="/src/assets/images/10.svg"
-              alt="Picture here"
-              className={classes.cardImg}
-            />
-            <p className={classes.card_name}>
-              {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-            </p>
-          </div>
-        </NavLink>
-      ))}
+      {plants.map(
+        (plant) =>
+          plant && ( // Add a conditional check for plant here
+            <NavLink to="/plantinfo" key={plant.id}>
+              <div className={classes.card}>
+                <img
+                  src="/src/assets/images/10.svg"
+                  alt="Picture here"
+                  className={classes.cardImg}
+                />
+                <p className={classes.card_name}>
+                  {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
+                </p>
+              </div>
+            </NavLink>
+          )
+      )}
     </div>
   );
 }
