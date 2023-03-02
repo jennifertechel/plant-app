@@ -17,7 +17,6 @@ function PlantInfo() {
       <ErrorBoundary>
         <InfoCard plant={plant} />
       </ErrorBoundary>
-      <div className={classes.buttonDiv}></div>
     </main>
   );
 }

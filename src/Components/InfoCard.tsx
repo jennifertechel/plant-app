@@ -20,10 +20,9 @@ function InfoCard({ plant }: { plant: Plant }) {
   };
 
   return (
-    <main className={classes.main}>
+    <main className={classes.card}>
       <div className={classes.image}>
         <span className={classes.span}>click on the plant!</span>
-
         <img
           src={imageSrc}
           alt="Picture of plant"
@@ -33,8 +32,13 @@ function InfoCard({ plant }: { plant: Plant }) {
       </div>
 
       <div className={classes.info}>
-        <h3 className={classes.h3}>{plant.latin}</h3>
-        <h5>{plant.common.length > 1 ? plant.common[1] : plant.common[0]}</h5>
+        <h3 className={classes.h3}>
+          {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
+        </h3>
+        <h5 className={classes.h5}>
+          <span className={classes.bold}>Latin name: </span>
+          {plant.latin}
+        </h5>
 
         <div className={classes.right}>
           <div className={classes.p}>
@@ -55,7 +59,7 @@ function InfoCard({ plant }: { plant: Plant }) {
           </div>
         </div>
 
-        <Link to="/matchlistoverview">
+        <Link to="/matchlistoverview" className={classes.button}>
           <FilledButton text="Back" />
         </Link>
       </div>
@@ -64,10 +68,11 @@ function InfoCard({ plant }: { plant: Plant }) {
 }
 
 const useStyles = createUseStyles({
-  main: {
+  card: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
+    marginTop: "3rem",
     "@media (max-width: 550px)": {
       flexDirection: "column",
       alignItems: "center",
@@ -123,6 +128,15 @@ const useStyles = createUseStyles({
     paddingTop: "0rem",
     fontWeight: "bold",
   },
+  h5: {
+    margin: "0 0 1rem",
+    fontFamily: "Montserrat",
+    fontWeight: 400,
+    fontSize: "1rem",
+  },
+  bold: {
+    fontWeight: 600,
+  },
   p: {
     display: "flex",
     justifyContent: "center",
@@ -142,12 +156,7 @@ const useStyles = createUseStyles({
     paddingLeft: "0rem",
   },
   button: {
-    height: "3rem",
-    paddingLeft: "0",
-    width: "100%",
-    display: "flex",
-    alignItems: "flex-end",
-    justifyContent: "flex-start",
+    margin: "2rem -1.2rem",
   },
 });
 
