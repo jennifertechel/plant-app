@@ -1,17 +1,28 @@
 import "material-icons/iconfont/material-icons.css";
+import { useState } from "react";
 import { createUseStyles } from "react-jss";
 import { Plant } from "../hooks/usePlantMatch";
 
 function InfoCard({ plant }: { plant: Plant }) {
   const classes = useStyles();
+  const [imageSrc, setImageSrc] = useState("/src/assets/images/plant.svg");
+
+  const handleClick = () => {
+    if (imageSrc === "/src/assets/images/plant.svg") {
+      setImageSrc("/src/assets/images/other-plant-image.svg");
+    } else {
+      setImageSrc("/src/assets/images/plant.svg");
+    }
+  };
 
   return (
     <main className={classes.main}>
       <div className={classes.image}>
         <img
-          src="/src/assets/images/plant.svg"
+          src={imageSrc}
           alt="Picture of plant"
           style={{ width: "100%" }}
+          onClick={handleClick}
         />
       </div>
 
