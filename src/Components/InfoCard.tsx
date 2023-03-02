@@ -16,9 +16,11 @@ function InfoCard({ plant }: { plant: Plant }) {
       </div>
 
       <div className={classes.info}>
-        <h3 className={classes.h3}>
+        <h3 className={classes.h3}>{plant.latin}</h3>
+        <h5>
+          Common name:{" "}
           {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-        </h3>
+        </h5>
         <p className={classes.p}>
           <i className="material-icons-outlined">water_drop</i>
           {plant.watering}

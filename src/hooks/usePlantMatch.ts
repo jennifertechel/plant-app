@@ -8,6 +8,7 @@ export interface Plant {
   watering: string;
   family: string;
   climate: string;
+  latin: string;
 }
 
 export const usePlantMatch = () => {
@@ -54,12 +55,12 @@ export const usePlantMatch = () => {
     return directionFilter && wateringFilter;
   });
 
-  // Check if plant name is a duplicate
-  const uniquePlants = Array.from(
-    new Set(filteredPlants.map((plant) => plant.common[0]))
-  ).map((common) => filteredPlants.find((plant) => plant.common[0] === common));
+  // // Check if plant name is a duplicate
+  // const uniquePlants = Array.from(
+  //   new Set(filteredPlants.map((plant) => plant.common[0]))
+  // ).map((common) => filteredPlants.find((plant) => plant.common[0] === common));
 
   console.log(filteredPlants);
 
-  return uniquePlants;
+  return filteredPlants;
 };

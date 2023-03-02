@@ -11,7 +11,7 @@ function PlantInfo() {
   const plants = usePlantMatch();
   const plant = plants.find((plant) => plant.id == params.id);
 
-  if (!plant) return <p>Växten finns inte....</p>;
+  if (!plant) return <p></p>;
 
   return (
     <main className={classes.main}>

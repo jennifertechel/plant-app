@@ -8,11 +8,6 @@ interface Props {
 
 function Card({ plant }: Props) {
   const classes = useStyles();
-  const images = [
-    "/src/assets/images/10.svg",
-    "/src/assets/images/12.svg",
-    "/src/assets/images/11.svg",
-  ];
 
   return (
     <Link to={"/plantinfo/" + plant.id} key={plant.id} className={classes.card}>
@@ -21,9 +16,7 @@ function Card({ plant }: Props) {
         alt="Picture here"
         className={classes.cardImg}
       />
-      <p className={classes.cardName}>
-        {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-      </p>
+      <p className={classes.cardName}>{plant.latin}</p>
     </Link>
   );
 }
