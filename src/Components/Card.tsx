@@ -32,8 +32,11 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     justifyContent: "center",
     flexWrap: "wrap",
+    width: "70rem",
   },
   linkStyle: {
+    display: "flex",
+    flexWrap: "wrap",
     textDecoration: "none",
     color: "Black",
   },
