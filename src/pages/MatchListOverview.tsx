@@ -29,6 +29,13 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     justifyContent: "center",
     flexWrap: "wrap",
+    width: "70rem",
+    "@media (max-width: 989px)": {
+      width: "60rem",
+    },
+    "@media (max-width: 668px)": {
+      width: "40rem",
+    },
   },
   main: {
     display: "flex",

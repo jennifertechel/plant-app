@@ -10,17 +10,22 @@ function Card({ plant }: Props) {
   const classes = useStyles();
 
   return (
-    // skapa div runt Link
-    <Link to={"/plantinfo/" + plant.id} key={plant.id} className={classes.card}>
-      <img
-        src="/src/assets/images/10.svg"
-        alt="Picture here"
-        className={classes.cardImg}
-      />
-      <p className={classes.card_name}>
-        {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
-      </p>
-    </Link>
+    <div className={classes.container}>
+      <Link
+        to={"/plantinfo/" + plant.id}
+        key={plant.id}
+        className={classes.card}
+      >
+        <img
+          src="/src/assets/images/10.svg"
+          alt="Picture here"
+          className={classes.cardImg}
+        />
+        <p className={classes.card_name}>
+          {plant.common.length > 1 ? plant.common[1] : plant.common[0]}
+        </p>
+      </Link>
+    </div>
   );
 }
 
@@ -30,19 +35,16 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     justifyContent: "center",
     flexWrap: "wrap",
-    // width: "70rem",
+    // width: "60rem",
   },
-  // linkStyle: {
-  //   display: "flex",
-  //   textDecoration: "none",
-  //   color: "Black",
-  // },
   card: {
     width: "18rem",
     height: "13rem",
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
+    textDecoration: "none",
+    color: "Black",
     margin: "1.5rem",
     backgroundColor: "#F0E1D4",
   },
