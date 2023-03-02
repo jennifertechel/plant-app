@@ -35,7 +35,6 @@ const useStyles = createUseStyles({
     flexDirection: "row",
     justifyContent: "center",
     flexWrap: "wrap",
-    // width: "60rem",
   },
   card: {
     width: "18rem",
