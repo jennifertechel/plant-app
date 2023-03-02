@@ -1,7 +1,6 @@
 import { createUseStyles } from "react-jss";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ErrorBoundary from "../Components/ErrorBoundary";
-import FilledButton from "../Components/FilledButton";
 import InfoCard from "../Components/InfoCard";
 import { usePlantMatch } from "../hooks/usePlantMatch";
 
@@ -11,18 +10,14 @@ function PlantInfo() {
   const plants = usePlantMatch();
   const plant = plants.find((plant) => plant.id == params.id);
 
-  if (!plant) return <p>Växten finns inte....</p>;
+  if (!plant) return <p></p>;
 
   return (
     <main className={classes.main}>
       <ErrorBoundary>
         <InfoCard plant={plant} />
       </ErrorBoundary>
-      <div className={classes.buttonDiv}>
-        <Link to="/matchlistoverview">
-          <FilledButton text="Back" />
-        </Link>
-      </div>
+      <div className={classes.buttonDiv}></div>
     </main>
   );
 }
