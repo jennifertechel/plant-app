@@ -29,8 +29,15 @@ const useStyles = createUseStyles({
     justifyContent: "center",
     flexDirection: "column",
     margin: "1.5rem",
-
     backgroundColor: "#F0E1D4",
+    transition: "all 0.2s ease",
+    "&:hover": {
+      transform: "scale(1.1)",
+      zIndex: 1,
+    },
+    "&:hover ~ *": {
+      opacity: 0.5,
+    },
   },
   cardImg: {
     paddingTop: "4rem",
