@@ -44,10 +44,14 @@ const useStyles = createUseStyles({
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    textDecoration: "none",
-    color: "Black",
     margin: "1.5rem",
+    textDecoration: "none",
     backgroundColor: "#F0E1D4",
+    transition: "all 0.2s ease",
+    "&:hover": {
+      transform: "scale(1.1)",
+      zIndex: 1,
+    },
   },
   cardImg: {
     paddingTop: "4rem",
