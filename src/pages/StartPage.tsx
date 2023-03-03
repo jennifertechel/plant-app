@@ -5,16 +5,14 @@ import OutlinedButton from "../Components/OutlinedButton";
 function StartPage() {
   const classes = useStyles();
   return (
-    <>
-      <main className={classes.main}>
-        <p className={classes.p}>
-          Do our test to find the right plants for your home
-        </p>
-        <NavLink to="quizpageone" className={classes.buttonLink}>
-          <OutlinedButton text="Let's begin" />
-        </NavLink>
-      </main>
-    </>
+    <main className={classes.main}>
+      <p className={classes.p}>
+        Do our test to find the right plants for your home
+      </p>
+      <NavLink to="quizpageone" className={classes.buttonLink}>
+        <OutlinedButton text="Let's begin" />
+      </NavLink>
+    </main>
   );
 }
 

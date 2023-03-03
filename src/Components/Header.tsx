@@ -4,12 +4,10 @@ function Header() {
   const classes = useStyles();
 
   return (
-    <>
-      <header className={classes.header}>
-        <h1 className={classes.h1}>PlantMatch</h1>
-        <div className={classes.border}></div>
-      </header>
-    </>
+    <header className={classes.header}>
+      <h1 className={classes.h1}>PlantMatch</h1>
+      <div className={classes.border}></div>
+    </header>
   );
 }
 

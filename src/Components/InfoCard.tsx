@@ -20,7 +20,7 @@ function InfoCard({ plant }: { plant: Plant }) {
   };
 
   return (
-    <main className={classes.card}>
+    <div className={classes.card}>
       <div className={classes.image}>
         <div className={classes.span}>
           click me <i className="material-icons-outlined">arrow_outward</i>
@@ -63,7 +63,7 @@ function InfoCard({ plant }: { plant: Plant }) {
           <FilledButton text="Back" />
         </Link>
       </div>
-    </main>
+    </div>
   );
 }
 

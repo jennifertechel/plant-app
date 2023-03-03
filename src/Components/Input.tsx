@@ -10,17 +10,15 @@ function Input(props: Props) {
   const classes = useStyles();
 
   return (
-    <>
-      <label className={classes.label}>
-        <input
-          type="checkbox"
-          id={props.text.toString()}
-          checked={props.value}
-          onChange={(e) => props.onChecked(e.target.checked)}
-        />
-        {props.text}
-      </label>
-    </>
+    <label className={classes.label}>
+      <input
+        type="checkbox"
+        id={props.text.toString()}
+        checked={props.value}
+        onChange={(e) => props.onChecked(e.target.checked)}
+      />
+      {props.text}
+    </label>
   );
 }
 
