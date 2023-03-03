@@ -7,15 +7,13 @@ import FilledButton from "./FilledButton";
 
 function InfoCard({ plant }: { plant: Plant }) {
   const classes = useStyles();
-  const [imageSrc, setImageSrc] = useState(
-    "/src/assets/images/plant-green.svg"
-  );
+  const [imageSrc, setImageSrc] = useState("/images/plant-green.svg");
 
   const handleClick = () => {
-    if (imageSrc === "/src/assets/images/plant-green.svg") {
-      setImageSrc("/src/assets/images/plant-pink.svg");
+    if (imageSrc === "/images/plant-green.svg") {
+      setImageSrc("/images/plant-pink.svg");
     } else {
-      setImageSrc("/src/assets/images/plant-green.svg");
+      setImageSrc("/images/plant-green.svg");
     }
   };
 
