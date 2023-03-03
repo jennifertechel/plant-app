@@ -39,17 +39,17 @@ npm install react-router-dom
 
 - [x] Uppgiften lämnas in i tid!
 
-- [x] Muntlig presentation är genomförd
+- [x] Muntlig presentation är genomförd
 
 ### För väl godkänt
 
-- [x] Alla punkter för godkänt är uppfyllda
+- [x] Alla punkter för godkänt är uppfyllda
 
-- [x] Ett “CSS i JS“ lib skall användas för at skriva CSS (ex JSS, Styled-Components, mm).
+- [x] Ett "CSS i JS" lib skall användas för att skriva CSS (ex. JSS, Styled-Components, mm)
 
 - [x] En ”ErrorBoundry”- komponent ska skapas och användas på minst 3 ställen.
 
-- [x] Data från ett web-API hämtas och visas på sidan.
+- [x] Data från ett web-API hämtas och visas på sidan.
 
 **Skapare:**
 
