@@ -9,7 +9,11 @@ interface Props {
 
 function Card({ plant, index }: Props) {
   const classes = useStyles();
-  const imagesURL = ["/images/11.svg", "/images/12.svg", "/images/10.svg"];
+  const imagesURL = [
+    "/images/plant-1.svg",
+    "/images/plant-2.svg",
+    "/images/plant-3.svg",
+  ];
   const imagesIndex = index % imagesURL.length;
   const image = imagesURL[imagesIndex];
 
