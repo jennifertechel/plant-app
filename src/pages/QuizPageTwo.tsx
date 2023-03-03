@@ -15,7 +15,7 @@ function QuizPageTwo() {
         <h2 className={classes.h2}>
           How much time would you like to spend on your plants?
         </h2>
-        <p>Choose one option</p>
+        <p>Choose one or multiple options</p>
         <ErrorBoundary>
           <form className={classes.form}>
             <Input
