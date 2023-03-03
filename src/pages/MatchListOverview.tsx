@@ -8,18 +8,16 @@ function MatchListOverview() {
   const plants = usePlantMatch();
 
   return (
-    <>
-      <main className={classes.main}>
-        <h2>Your match:</h2>
-        <ErrorBoundary>
-          <div className={classes.container}>
-            {plants.map((plant, index) => (
-              <Card plant={plant} index={index} />
-            ))}
-          </div>
-        </ErrorBoundary>
-      </main>
-    </>
+    <main className={classes.main}>
+      <h2>Your match:</h2>
+      <ErrorBoundary>
+        <div className={classes.container}>
+          {plants.map((plant, index) => (
+            <Card key={plant.id} plant={plant} index={index} />
+          ))}
+        </div>
+      </ErrorBoundary>
+    </main>
   );
 }
 
