@@ -23,7 +23,7 @@ npm install react-router-dom
 
 ## Demo
 
-Öppna en demolänk på [Netlify](https://pages.github.com/).
+Öppna en demolänk på [Netlify](https://plant-match-app.netlify.app/).
 
 ## Krav
 
